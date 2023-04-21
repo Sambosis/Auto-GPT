@@ -151,14 +151,14 @@ def get_prompt() -> str:
         " the best of your abilities."
     )
     prompt_generator.add_performance_evaluation(
-        "Constructively self-criticize your big-picture behavior constantly."
+        "Constructively self-criticize your big-picture behavior and change plan if not making progress."
     )
     prompt_generator.add_performance_evaluation(
-        "Reflect on past decisions and strategies to refine your approach."
+        "Reflect on past successful and failed strategies to refine your approach."
     )
     prompt_generator.add_performance_evaluation(
         "Every command has a cost, so be smart and efficient. Aim to complete tasks in"
-        " the least number of steps."
+        " the least number of steps and not repeating steps without a revision"
     )
 
     # Generate the prompt string

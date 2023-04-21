@@ -145,13 +145,14 @@ def write_to_file(filename: str, text: str) -> str:
         str: A message indicating success or failure
     """
     if check_duplicate_operation("write", filename):
-        return "Error: File has already been updated."
+        filname = filename + 'W'
+        #return "Error: File has already been updated."
     try:
         filepath = path_in_workspace(filename)
         directory = os.path.dirname(filepath)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        with open(filepath, "w", encoding="utf-8") as f:
+        with open(filepath, "a", encoding="utf-8") as f:
             f.write(text)
         log_operation("write", filename)
         return "File written to successfully."
